@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+}
+
+.cell {
+    border: 1px solid transparent;
+    border-color: rgba(0, 0, 0, .3);
+    width: 20px;
+    height: 20px;
+}
+
+#fieldCanvas {
+    position: absolute;
+    z-index: -1;
+}
+
+#fieldTable {
+    margin: 10px;
+    z-index: -10;
+}
+
+.score {
+    display: inline-block;
+    border: 1px solid black;
+    height: 31px;
+}
+
+.rotationButton {
+    margin-left: 10px;
+    z-index: 0;
+    display: inline-block;
+    background-color: #a7c9eb;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.arrow-round {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin: 7px auto;
+    border: 6px solid #0074d9;
+    border-radius: 50%;
+    border-right-color: transparent;
+}
+
+    .arrow-round::after {
+        content: "";
+        position: absolute;
+        border: 12px solid #ffffff;
+        top: -6px;
+        left: 8px;
+        border-bottom-color: #0074d9;
+        border-top-width: 0;
+        border-right-width: 0;
+        border-left-color: transparent;
+    }

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "LocalGame";
+}
+
+@section styles{
+    @Styles.Render("/Content/dice.css")
+    @Styles.Render("/Content/main.css")
+    @Styles.Render("/Content/field.css")
+}
+<div>
+    <div id="field" style="display: inline-block">
+        <canvas id="fieldCanvas"></canvas>
+        <table id="fieldTable" cellspacing="0"></table>
+    </div>
+    <div id="dices"></div>
+</div>
+<div style="display: flex; align-items: center;">
+    <div onclick="rotateRect()" class="rotationButton">
+        <div class="arrow-round"></div>
+    </div>
+
+    <button style="margin-left: 0.6em" id="throw">throw</button>
+    <div>
+        <div id="top-score" class="score">0</div>
+        <div id="bottom-score" class="score">0</div>
+    </div>
+</div>
+<!--<p id="loading_text">Loading libraries, please wait a bit...</p> -->
+
+<div id="info_div" style="display: none">
+    <div>
+        <span id="label"></span>
+    </div>
+
+</div>
+
+@section scripts{
+    @Scripts.Render("/Scripts/libs/three.min.js")
+    @Scripts.Render("/Scripts/libs/cannon.min.js")
+    @Scripts.Render("/Scripts/teal.js")
+    @Scripts.Render("/Scripts/dice.js")
+    @Scripts.Render("/Scripts/main.js")
+    @Scripts.Render("/Scripts/field.js")
+
+    @*<script src="Scripts/libs/three.min.js"></script>
+                <script src="Scripts/libs/cannon.min.js"></script>
+
+                <script src="/Scripts/teal.js"></script>
+            <script src="Scripts/dice.js"></script>
+            <script src="Scripts/main.js"></script>
+        <script src="scripts/field.js"></script>*@
+    <script type="text/javascript" defer="defer">
+        dice_initialize(document.body);
+    </script>
+}
+

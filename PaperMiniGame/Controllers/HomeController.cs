@@ -13,6 +13,16 @@ namespace PaperMiniGame.Controllers
             return View();
         }
 
+        public ActionResult singulrTest()
+        {
+            return View();
+        }
+
+        public ActionResult LocalGame()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

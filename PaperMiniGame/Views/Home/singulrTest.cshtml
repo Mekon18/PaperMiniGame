@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "singulrTest";
+}
+
+@section scripts {
+    <script>
+        var RoomHub = $.connection.roomHub;
+
+        $.connection.hub.start().done(function () {
+            RoomHub.server.connect("test");
+        });
+
+        RoomHub.client.onConnected = function (id, userName, allUsers) {
+            for (var user in allUsers) {
+
+                $("#test").append(`<p>${allUsers[user].Name}</p>`)
+            }
+        }
+
+    </script>
+    }
+
+<h2>singulrTest</h2>
+<div id="test">
+
+</div>
+
